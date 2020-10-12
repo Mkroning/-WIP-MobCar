@@ -1,7 +1,7 @@
-import mongoose from 'mongoose'
-import Joi from 'joi';
+import {mongoose} from 'mongoose'
+import {Joi} from 'joi';
 import { marca } from './marca';
-import { tipo, Tipo } from './tipo';
+import { Tipo } from './tipo';
 
 const Carro = mongoose.model(
   "Carro",
@@ -22,7 +22,7 @@ const Carro = mongoose.model(
       required: true
     },
     numAssentos: {
-      type: Number, 
+      type: Number,
       min: 1,
       max: 255,
       default: 5
@@ -42,7 +42,7 @@ const Carro = mongoose.model(
       type: Boolean,
       default: false
     },
-    numEstoque: { 
+    numEstoque: {
       type: Number,
       required: true,
       min: 0,
@@ -80,7 +80,7 @@ export function validaCarro(carro) {
       .required(),
     taxaDiaria: Joi.number()
       .min(0)
-      ,required()  
+      ,required()
   };
 
   return Joi.validate(carro, schema);

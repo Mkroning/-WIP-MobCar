@@ -1,12 +1,12 @@
-import mongoose from 'mongoose';
-import Joi from 'joi';
+import {mongoose} from 'mongoose';
+import {Joi} from 'joi';
 
 export const Tipo = mongoose.model(
   "Tipo",
   new mongoose.Schema({
     name: {
       type: String,
-      required: true, 
+      required: true,
       trim: true,
       minlength: 1,
       maxlength: 50

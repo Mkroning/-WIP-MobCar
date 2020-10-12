@@ -1,12 +1,12 @@
-import mongoose from 'mongoose';
-import Joi from 'joi';
-import PasswordComplexity from 'joi-password-complexity';
-import jwt from 'jsonwebtoken';
-import config from './../config'
+import {mongoose} from 'mongoose';
+import {Joi} from 'joi';
+import {PasswordComplexity} from 'joi-password-complexity';
+import {jwt} from 'jsonwebtoken';
+import {config} from './../config'
 
 const usuario = new mongoose.Schema({
   name: {
-    type: String, 
+    type: String,
     required: true,
     trim: true,
     minlength: 5,
@@ -14,7 +14,7 @@ const usuario = new mongoose.Schema({
   },
   email: {
     type: String,
-    required: true, 
+    required: true,
     unique: true,
     trim: true,
     minlength: 5,
@@ -66,7 +66,7 @@ export function validateUser(user) {
   };
   let result = Joi.validate(user, schema);
   if (!result["error"]) result = validatePassword(user.password);
-  
+
   return result;
 }
 function validatePassword(password) {

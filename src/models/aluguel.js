@@ -1,6 +1,6 @@
-import mongoose from 'mongoose';
-import Joi, { func } from 'joi';
-import moment from 'moment';
+import { mongoose } from 'mongoose';
+import { Joi } from 'joi';
+import {moment} from 'moment';
 
 const aluguel = new mongoose.Schema({
   user: {
@@ -31,7 +31,7 @@ const aluguel = new mongoose.Schema({
         minlength: 1,
         maxlength: 50
       },
-      taxaDiaria: { 
+      taxaDiaria: {
         type: Number,
         required: true,
         min: 0,
@@ -72,7 +72,7 @@ aluguel.methods.return = function() {
 export const Aluguel = mongoose.model("Aluguel", aluguel);
 
 export function validaAluguel(aluguel) {
-  const schema = { 
+  const schema = {
     CarroId: Joi.objectId().required()
   };
   return Joi.validate(aluguel, schema);

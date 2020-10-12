@@ -1,12 +1,12 @@
-import Joi from "joi";
-import mongoose from 'mongoose'
+import { Joi } from "joi"
+import { mongoose } from 'mongoose'
 
 export const marca = mongoose.model(
   "marca",
   new mongoose.Schema({
     name: {
       type: String,
-      required: true, 
+      required: true,
       trim: true,
       minlength:1,
       maxlength: 50

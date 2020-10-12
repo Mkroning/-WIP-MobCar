@@ -1,4 +1,4 @@
-import config from './../config';
+import {config} from './../config';
 
 module.exports = function () {
   if(!config.get("JWT_PRIVATE_KEY")) {

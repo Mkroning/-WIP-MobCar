@@ -1,7 +1,7 @@
 import 'express-async-errors';
 import 'winston-mongodb';
-import winston from 'winston';
-import config from './../config'
+import {winston} from 'winston';
+import {config} from './../config'
 
 module.exports = function () {
   winston.handleException(
