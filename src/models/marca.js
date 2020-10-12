@@ -1,7 +1,7 @@
 import { Joi } from "joi"
 import { mongoose } from 'mongoose'
 
-export const marca = mongoose.model(
+export const Marca = mongoose.model(
   "marca",
   new mongoose.Schema({
     name: {

@@ -3,7 +3,7 @@ import {Joi} from 'joi';
 import { marca } from './marca';
 import { Tipo } from './tipo';
 
-const Carro = mongoose.model(
+export const Carro = mongoose.model(
   "Carro",
   new mongoose.Schema({
     name: {
