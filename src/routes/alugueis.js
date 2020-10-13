@@ -39,7 +39,7 @@ router.post("/", [auth, validateObjectId(validate)], async(req, res) =>{
   const user = await User.findById(req.user._id);
   if (!user) return res.status(400).send(userNotFound);
 
-  const carro = await Carro.findById(req.body.caroId);
+  const carro = await Carro.findById(req.body.carroId);
   if (!carro) return res.status(400).send(carroNotFound);
 
   let aluguel = await Aluguel.lookup(req.user._id, req.body.carroId);
