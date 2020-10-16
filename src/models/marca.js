@@ -1,5 +1,5 @@
-import { Joi } from "joi"
-import { mongoose } from 'mongoose'
+const mongoose = require("mongoose");
+const Joi = require("joi");
 
 export const Marca = mongoose.model(
   "marca",

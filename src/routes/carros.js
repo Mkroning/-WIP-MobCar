@@ -1,11 +1,12 @@
-import { Carro, validate} from './../models/carro';
-import { Marca } from './../models/marca';
-import { Tipo } from './../models/tipo';
-import { auth } from './../middleware/auth';
-import { admin } from './../middleware/admin';
-import { validateObjectId } from './../middleware/validateObjectId';
-import { validateReqBody } from './../middleware/validateReqBody';
-import { express } from 'express';
+const { Carro, validate } = require("./../models/carro");
+const { Marca } = require("./../models/marca");
+const { Tipo } = require(",/../models/tipo");
+const auth = require("./../middleware/auth");
+const admin = require("./../middleware/admin");
+const validateObjectId = require("./../middleware/validateObjectId");
+const validateReqBody = require("./../middleware/validateReqBody");
+const express = require("express");
+const router = express.Router();
 
 const router = express.Router();
 

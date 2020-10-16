@@ -1,7 +1,7 @@
-import { User } from './../models/user';
-import { auth } from './../middleware/auth';
-import { admin } from './../middleware/admin';
-import { express } from 'express';
+const { User } = require("./../models/user");
+const auth = require("./../middleware/auth");
+const admin = require("./../middleware/admin");
+const express = require("express");
 
 const router = express.Router();
 

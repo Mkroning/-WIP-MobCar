@@ -1,8 +1,9 @@
-import { Tipo, validate } from './../models/tipo';
-import {
-   auth, admin, validateObjectId, validatReqBody
-  } from './../middleware';
-import { express } from 'express';
+const { Tipo, validate } = require("./../models/type");
+const auth = require("./../middleware/auth");
+const admin = require("./../middleware/admin");
+const validateObjectId = require("./../middleware/validateObjectId");
+const validateReqBody = require("./../middleware/validateReqBody");
+const express = require("express");
 
 const router = express.Router();
 

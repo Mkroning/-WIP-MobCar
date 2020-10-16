@@ -1,7 +1,7 @@
-import {mongoose} from 'mongoose'
-import {Joi} from 'joi';
-import { marca } from './marca';
-import { Tipo } from './tipo';
+const mongoose = require("mongoose");
+const Joi = require("joi");
+const { Marca } = require("./marca");
+const { Tipo } = require("./tipo");
 
 export const Carro = mongoose.model(
   "Carro",
@@ -14,7 +14,7 @@ export const Carro = mongoose.model(
       maxlength: 50,
     },
     marca: {
-      type: marca.schema,
+      type: Marca.schema,
       required: true
     },
     tipo: {

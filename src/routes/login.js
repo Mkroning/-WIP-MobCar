@@ -1,8 +1,10 @@
-import { User } from './../models/user';
-import { validateReqBody } from './../middleware/validateReqBody';
-import { bcrypt } from 'bcrypt';
-import { Joi } from 'joi';
-import { express } from 'express';
+const { User } = require("./../models/user");
+const validateReqBody = require("./../middleware/validateReqBody");
+const bcrypt = require("bcrypt");
+const Joi = require("joi");
+const express = require("express");
+const router = express.Router();
+
 
 const router = express.Router();
 

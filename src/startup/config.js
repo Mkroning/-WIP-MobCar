@@ -1,4 +1,4 @@
-import {config} from './../config';
+const config = require("config");
 
 module.exports = function () {
   if(!config.get("JWT_PRIVATE_KEY")) {

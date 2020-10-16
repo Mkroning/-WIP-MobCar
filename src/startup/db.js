@@ -1,7 +1,7 @@
-import {mongoose} from 'mongoose';
-import {Fawn} from 'fawn';
-import {winston} from 'winston';
-import {config} from './../config';
+const mongoose = require("mongoose");
+const Fawn = require("fawn");
+const winston = require("winston");
+const config = require("config");
 
 module.exports = function () {
   const db = config.get("DB_CONN");

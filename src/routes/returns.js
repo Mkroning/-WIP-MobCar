@@ -1,9 +1,8 @@
-import { Aluguel, validate} from './../models/aluguel';
-import { auth } from './../middleware/auth';
-import { validateReqBody } from './../middleware/validateReqBody';
-import { Fawn } from 'fawn';
-import { express } from 'express';
-
+const { Aluguel, validate } = require("./../models/rental");
+const auth = require("./../middleware/auth");
+const validateReqBody = require("./../middleware/validateReqBody");
+const Fawn = require("fawn");
+const express = require("express");
 const router = express.Router();
 
 router.post("/", [auth, validateReqBody(validate)], async (req, res) => {

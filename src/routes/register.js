@@ -1,9 +1,8 @@
-import { User, validate } from './../models/user'
-import { validateReqBody } from './../middleware/validateObjectId';
-import { _ } from 'lodash';
-import { bcrypt } from 'bcrypt';
-import { express } from 'express';
-
+const { User, validate } = require("./../models/user");
+const validateReqBody = require("./../middleware/validateReqBody");
+const _ = require("lodash");
+const bcrypt = require("bcrypt");
+const express = require("express");
 const router = express.Router();
 
 router.post("/", validateReqBody(validate), async (req, res) => {

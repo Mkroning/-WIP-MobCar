@@ -1,8 +1,8 @@
-import {mongoose} from 'mongoose';
-import {Joi} from 'joi';
-import {PasswordComplexity} from 'joi-password-complexity';
-import {jwt} from 'jsonwebtoken';
-import {config} from './../config'
+const config = require("config");
+const jwt = require("jsonwebtoken");
+const mongoose = require("mongoose");
+const Joi = require("joi");
+const PasswordComplexity = require("joi-password-complexity");
 
 const usuario = new mongoose.Schema({
   name: {

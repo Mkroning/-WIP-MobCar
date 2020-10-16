@@ -1,12 +1,9 @@
-import { Marca, validate } from './../models/marca';
-import { auth } from './../middleware/auth';
-import { admin } from './../middleware/admin';
-import { validateObjectId } from './../middleware/validateObjectId';
-import { validateReqBody } from './../middleware/validateReqBody';
-
-import { express } from 'express';
-import { not } from 'joi';
-
+const { Marca, validate } = require("./../models/marca");
+const auth = require("./../middleware/auth");
+const admin = require("./../middleware/admin");
+const validateObjectId = require("./../middleware/validateObjectId");
+const validateReqBody = require("./../middleware/validateReqBody");
+const express = require("express");
 const router = express.Router();
 
 const notFound = "Marca com o Id fornecido não existe";

@@ -1,12 +1,12 @@
-import { Aluguel, validate } from './../models/aluguel';
-import { Carro } from './../models/carro';
-import { User } from './../models/user';
-import {
-  auth, admin, validateObjectId, validateReqBody
-} from './../middleware';
-import { Fawn } from 'fawn';
-import { express } from 'express';
-
+const { Aluguel, validate } = require("./../models/aluguel");
+const { Carro } = require("./../models/carro");
+const { User } = require("./../models/user");
+const auth = require("./../middleware/auth");
+const admin = require("./../middleware/admin");
+const validateObjectId = require("./../middleware/validateObjectId");
+const validateReqBody = require("./../middleware/validateReqBody");
+const Fawn = require("fawn");
+const express = require("express");
 const router = express.Router();
 
 const notFound = "Aluguel com o Id requisitado não existe";
@@ -35,7 +35,7 @@ router.get("/:id", [auth, admin, validateObjectId], async (req, res)=>{
   res.send(aluguel);
 });
 
-router.post("/", [auth, validateObjectId(validate)], async(req, res) =>{
+router.post("/", [auth, validateReqBody(validate)], async(req, res) =>{
   const user = await User.findById(req.user._id);
   if (!user) return res.status(400).send(userNotFound);
 
